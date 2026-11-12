@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroLearn | Electronics Learning Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="#home" class="logo">⚡ Electro<span>Learn</span></a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#learn">Learn</a>
+    <a href="#tools">Tools</a>
+    <a href="#projects">Projects</a>
+    <a href="#notes">Notes</a>
+  </nav>
+  <a href="#learn" class="nav-btn">Start Learning →</a>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="tag">⚡ YOUR ELECTRONICS LEARNING HUB</span>
+    <h1>Explore the World of <span>Electronics.</span></h1>
+    <p>Learn Electronics, Master Circuits, Build Projects.
+       Your engineering journey starts here.</p>
+    <div class="hero-buttons">
+      <a href="#learn" class="primary-btn">Start Learning →</a>
+      <a href="#projects" class="secondary-btn">Explore Projects</a>
+      <section class="section" id="notes">
+  <div class="section-heading">
+    <span class="tag">STUDY MATERIAL</span>
+    <h2>Engineering Study Materials</h2>
+    <p>Upload and manage your PDF Notes</p>
+  </div>
+
+  <div class="tool-card">
+    <label>Select Subject</label>
+    <select id="subject">
+      <option>Math </option>
+      <option>PPS</option>
+      <option>Chemistry</option>
+    </select>
+
+    <label>Select PDF</label>
+    <input type="file" id="pdfFile" accept=".pdf">
+
+    <button onclick="uploadPDF()">Upload PDF</button>
+    <div id="pdfList"></div>
+  </div>
+</section>
+    </div>
+    <div class="stats">
+      <div><h2>06+</h2><small>Topics</small></div>
+      <div><h2>05+</h2><small>Projects</small></div>
+      <div><h2>03</h2><small>Tools</small></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="circuit-circle">⚡</div>
+    <div class="floating-card">◉ Electronics</div>
+    <div class="floating-card second">⌁ Innovation</div>
+  </div>
+</section>
+
+<section class="section" id="learn">
+  <div class="section-heading">
+    <span class="tag">LEARN & GROW</span>
+    <h2>Explore Learning Modules</h2>
+    <p>Build your knowledge step by step.</p>
+  </div>
+
+  <div class="search-box">
+    <input id="searchInput" type="text"
+      placeholder="Search electronics topics...">
+    <button onclick="searchTopics()">Search</button>
+  </div>
+
+  <div class="card-grid" id="topicGrid">
+    <article class="learn-card">
+      <div class="card-icon">🔌</div>
+      <h3>Basic Electronics</h3>
+      <p>Learn voltage, current, resistance and power.</p>
+      <a href="#tools">Explore →</a>
+    </article>
+
+    <article class="learn-card">
+      <div class="card-icon">⚡</div>
+      <h3>Electrical Circuits</h3>
+      <p>Understand series, parallel and DC circuits.</p>
+      <a href="#tools">Explore →</a>
+    </article>
+
+    <article class="learn-card">
+      <div class="card-icon">🔋</div>
+      <h3>Electronic Components</h3>
+      <p>Learn about resistors, capacitors, diodes and LEDs.</p>
+      <a href="#components">Explore →</a>
+    </article>
+
+    <article class="learn-card">
+      <div class="card-icon">💻</div>
+      <h3>Programming</h3>
+      <p>Start learning C, C++ and Arduino programming.</p>
+      <a href="#projects">Explore →</a>
+    </article>
+
+    <article class="learn-card">
+      <div class="card-icon">📡</div>
+      <h3>Communication</h3>
+      <p>Explore signals, modulation and communication systems.</p>
+      <a href="#projects">Explore →</a>
+    </article>
+
+    <article class="learn-card">
+      <div class="card-icon">🌐</div>
+      <h3>IoT Technology</h3>
+      <p>Discover smart devices and Internet of Things.</p>
+      <a href="#projects">Explore →</a>
+    </article>
+  </div>
+  <p id="noResults" class="empty-message" hidden>No topics found.</p>
+</section>
+
+<section class="section alternate" id="components">
+  <div class="section-heading">
+    <span class="tag">COMPONENT LIBRARY</span>
+    <h2>Electronic Components</h2>
+    <p>Know the components used in electronic circuits.</p>
+  </div>
+
+  <div class="card-grid">
+    <article class="learn-card">
+      <div class="card-icon">〽️</div>
+      <h3>Resistor</h3>
+      <p>Controls the flow of electric current.</p>
+    </article>
+    <article class="learn-card">
+      <div class="card-icon">🔋</div>
+      <h3>Capacitor</h3>
+      <p>Stores electrical energy in an electric field.</p>
+    </article>
+    <article class="learn-card">
+      <div class="card-icon">💡</div>
+      <h3>LED</h3>
+      <p>Emits light when current flows through it.</p>
+    </article>
+    <article class="learn-card">
+      <div class="card-icon">🔺</div>
+      <h3>Diode</h3>
+      <p>Allows current to flow mainly in one direction.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="tools">
+  <div class="section-heading">
+    <span class="tag">PRACTICAL TOOLS</span>
+    <h2>Electronics Calculators</h2>
+    <p>Practice formulas with interactive calculators.</p>
+  </div>
+
+  <div class="tool-grid">
+    <div class="tool-card">
+      <h3>⚡ Ohm's Law Calculator</h3>
+      <p>Enter voltage and resistance to calculate current.</p>
+      <label>Voltage (V)</label>
+      <input type="number" id="voltage" placeholder="Enter voltage">
+      <label>Resistance (Ω)</label>
+      <input type="number" id="resistance" placeholder="Enter resistance">
+      <button onclick="calculateOhm()">Calculate Current</button>
+      <div id="ohmResult" class="result">Result will appear here.</div>
+    </div>
+
+    <div class="tool-card">
+      <h3>🎨 Resistor Colour Calculator</h3>
+      <p>Calculate resistance using 4-band colour codes.</p>
+      <label>First Band</label>
+      <select id="band1"></select>
+      <label>Second Band</label>
+      <select id="band2"></select>
+      <label>Multiplier</label>
+      <select id="multiplier"></select>
+      <button onclick="calculateResistor()">Calculate Resistance</button>
+      <div id="resistorResult" class="result">Result will appear here.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alternate" id="projects">
+  <div class="section-heading">
+    <span class="tag">BUILD SOMETHING</span>
+    <h2>Explore Electronics Projects</h2>
+    <p>Learn by making real-world projects.</p>
+  </div>
+  <div class="card-grid">
+    <article class="learn-card">
+      <div class="card-icon">🏠</div>
+      <h3>Smart Home Automation</h3>
+      <p>Control home appliances using IoT.</p>
+      <span class="level">Intermediate</span>
+    </article>
+    <article class="learn-card">
+      <div class="card-icon">🌡️</div>
+      <h3>Temperature Monitor</h3>
+      <p>Measure temperature using sensors.</p>
+      <span class="level">Beginner</span>
+    </article>
+    <article class="learn-card">
+      <div class="card-icon">🚨</div>
+      <h3>Fire Alert System</h3>
+      <p>Detect fire using sensors and alarms.</p>
+      <span class="level">Intermediate</span>
+    </article>
+    <article class="learn-card">
+      <div class="card-icon">💡</div>
+      <h3>Automatic Street Light</h3>
+      <p>Control lights based on surrounding light.</p>
+      <span class="level">Beginner</span>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="notes">
+  <div class="section-heading">
+    <span class="tag">STUDY MATERIAL</span>
+    <h2>Notes & Resources</h2>
+    <p>Download sample revision notes.</p>
+    <h2>Basic Electronics Notes</h2>
+
+<a href="pdfs/FY_BTech_ENTC_Electronics_Components_With_Diagrams.pdf"
+   target="_blank">
+   Download Electronics PDF
+</a>
+  </div>
+  <div class="notes-card">
+    <div class="card-icon">📄</div>
+    <div>
+      <h3>Basic Electronics Quick Notes</h3>
+      <p>Ohm's Law, Voltage, Current, Resistance and Power.</p>
+    </div>
+    <button onclick="downloadNotes()">Download Notes ↓</button>
+  </div>
+</section>
+
+<section class="contact section" id="contact">
+  <span class="tag">GET IN TOUCH</span>
+  <h2>Keep Learning. Keep Building.</h2>
+  <p>Have a question or project idea? Get in touch.</p>
+  <a href="mailto:your-email@example.com" class="primary-btn">Contact Us</a>
+</section>
+</main>
+
+<footer>
+  <a href="#home" class="logo">⚡ Electro<span>Learn</span></a>
+  <p>© 2026 ElectroLearn. Made for Electronics Learners.</p>
+  <a href="#home">Back to top ↑</a>
+</footer>
+
+<script src="script.js"></script>
+<label>Select Multiple PDF Files</label>
+<input
+  type="file"
+  id="pdfFile"
+  accept=".pdf,application/pdf"
+  multiple
+>
+
+<button onclick="uploadPDF()">Upload All PDFs</button>
+
+<div id="pdfList"></div>
+</body>
+</html>
